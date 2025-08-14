@@ -101,7 +101,7 @@ app.use((err,req,res,next)=>{
 });
 
 app.get("/",(req,res)=>{
-    res.render("listings/new.ejs");
+    res.render("users/login.ejs");
 });
 // https://wanderlust-hsvd.onrender.com
 app.listen(8080,()=>{
