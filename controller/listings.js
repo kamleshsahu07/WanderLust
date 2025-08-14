@@ -1,11 +1,11 @@
-const Listing=require("../models/listing");
-
+const Listing=require("../models/listing.js");
 
 module.exports.index=async (req,res)=>{
     // let {id}=req.params;
     const allListings = await Listing.find({});
     res.render("listings/index.ejs",{ allListings });
 };
+
 module.exports.rendernewform=(req,res)=>{
     res.render("listings/new.ejs");
 }
