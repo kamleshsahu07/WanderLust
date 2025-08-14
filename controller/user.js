@@ -20,6 +20,7 @@ module.exports.renderLoginForm=(req,res)=>{
 };
 
 module.exports.renderSignupform = ( req,res )=>{
+    let redirectUrl=res.locals.redirectUrl || "/listings"
     console.log(redirectUrl);
     res.render("users/signup.ejs");
 };

@@ -84,46 +84,6 @@ app.use(express.urlencoded({extended:true}));
 app.use("/listings",listingsrouter);
 app.use("/listings/:id/reviews",reviewsrouter);
 app.use("/",Userrouter);
-// const validateReview = (err,req,res,next) => {
-//     let { error } = reviewSchema.validate(req.body);
-//     if(error){
-//         let errmsg = error.details.map((el)=>el.message).join(",");
-//         throw new ExpressError(400,errmsg);
-//     }else{
-//         console.log("happy");
-//         next();
-//     }
-// }
-
-// listings/:id/reviews
-
-// app.post("/listings/:id/reviews", validateReview , wrapAsync( async (req,res) => {
-//     let listing = await Listing.findById(req.params.id);
-//     let newReview =new Review(req.body.review);
-//     listing.reviews.push(newReview);
-//     await newReview.save();
-//     await listing.save();
-//     res.redirect(`/listings/${listing._id}`);
-// }));
-
-// app.get("/testlisting",async (req,res)=>{
-//     let sampleListening = new Listing({
-//         title:"the new nature",
-//         description:"by the beach",
-//         price:1200,
-//         location:"calangute,goa",
-//         country:"India",
-//     });
-//     await sampleListening.save();
-//     console.log("sample was saved");
-//     res.send("successful testing");
-// });
-
-
-// app.all("*",(req,res,next)=>{
-//     next(new ExpressError(404,"page not found!"));
-// });
-
 
 app.get("/demo",async(req,res) => {
     let fakeUser=new User({
@@ -133,8 +93,6 @@ app.get("/demo",async(req,res) => {
     let registereduser = await User.register(fakeUser,"helloworld");
     res.send(registereduser);
 })
-
-
 //middleware
 app.use((err,req,res,next)=>{
     let { statusCode=500,message } = err;
