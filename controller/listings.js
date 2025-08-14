@@ -1,4 +1,4 @@
-const Listing=require("..WanderLust/models/listing.js");
+const Listing=require("..WANDERLUST/models/listing.js");
 
 
 module.exports.index=async (req,res)=>{
