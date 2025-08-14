@@ -1,7 +1,7 @@
 const express=require("express");
 const router=express.Router();
 const wrapAsync=require("../utils/wrapAsync.js");
-const Listing=require("./models/listing.js");
+const Listing=require("../models/listing");
 const { isLoggedIn,isOwner,validateListing }=require("../middleware.js");
 const Review=require("../models/review.js");
 const { validateReview }=require("../middleware.js");
