@@ -100,8 +100,8 @@ app.use((err,req,res,next)=>{
     res.status(statusCode).render("error.ejs",{ message });
 });
 
-app.get("/listings",(req,res)=>{
-    console("going on listings");
+app.get("/",(req,res)=>{
+    res.render("listings/new.ejs");
 });
 // https://wanderlust-hsvd.onrender.com
 app.listen(8080,()=>{
