@@ -100,9 +100,9 @@ app.use((err,req,res,next)=>{
     res.status(statusCode).render("error.ejs",{ message });
 });
 
-// app.get("/",(req,res)=>{
-//     res.send("hi i am root");
-// });
+app.get("/",(req,res)=>{
+    res.render("home.ejs");
+});
 // https://wanderlust-hsvd.onrender.com
 app.listen(8080,()=>{
     console.log("listening on port 8080");
